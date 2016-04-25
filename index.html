@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>zeno is best ok</p>
+<p id="I"></p>
+<p id="red"></p>
+<p id="green"></p>
+<p id="blue"></p>
+
+<script>
+
+var R = [20,  200,  255,255,0,  255,0,  255];
+var G = [100,  20,  0,  0,  0,  255,255,255];
+var B = [200,  100,  0,  255,255,255,0,  255];
+
+var I=0.0;
+var T=64000;
+var fpms=0.06;
+var N=R.length - 1;
+var k= N/(T*fpms);
+
+//
+var myVar = setInterval(function(){ newBgColor() }, 17);
+
+
+//calculate the value of a decimal index for an array
+function decIndex(A,i) {
+    var j = Math.floor(i);
+    var R = A[j]+(A[(j+1)>A.length ? 0 : j+1]-A[j])*(i-j) ;   
+    return(Math.round(R));
+}
+
+//set new background color
+function newBgColor(){
+
+    document.body. style.backgroundColor = "#"+(decIndex(R,I)).toString(16)+(decIndex(G,I)).toString(16)+(decIndex(B,I)).toString(16);  
+
+    I+=k;
+
+    //display rgb values etc
+    document.getElementById("I").innerHTML = I.toString();  
+    document.getElementById("red").innerHTML = decIndex(R,I);
+    document.getElementById("green").innerHTML = decIndex(G,I);
+    document.getElementById("blue").innerHTML = decIndex(B,I);
+  
+    if(I>N){
+      I-=N;
+     };  
+ 
+}
+</script>
+</body>
+</html>
