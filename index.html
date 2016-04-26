@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <body>
+<!--test shit hier-->
+<p id="I"></p>
 <script>
 
 //rgb waarden
@@ -12,7 +14,7 @@ B=[32,35,37,39,41,43,45,47,49,51,53,55,57,59,61,64,66,68,70,73,75,78,80,82,85,86
 var I=0.0;
 
 //totale duur
-var T=64000;
+var T=32000;
 
 //afblijven
 var fpms=0.06;
@@ -33,6 +35,10 @@ function decIndex(A,i) {
 function newBgColor(){
     var kleur= "rgb("+decIndex(R,I)+","+decIndex(G,I)+","+decIndex(B,I)+")";
     document.body. style.backgroundColor =kleur; 
+
+//test/debug functies
+document.getElementById("I").innerHTML = I.toString();  
+
     I+=k;
     if(I>N) I-=N;  
 }
