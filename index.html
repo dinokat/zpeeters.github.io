@@ -2,13 +2,8 @@
 <html>
 <body>
 
-<p>zeno is best ok</p>
-<p><a href="pure_stront.html">STRONT</a> is een link naar pure stront.</p>
 
-<p id="I"></p>
-<p id="red"></p>
-<p id="green"></p>
-<p id="blue"></p>
+
 
 <script>
 
@@ -48,13 +43,6 @@ function newBgColor(){
     document.body. style.backgroundColor = "#"+(decIndex(R,I)).toString(16)+(decIndex(G,I)).toString(16)+(decIndex(B,I)).toString(16);  
 
     I+=k;
-
-    //display rgb values etc
-    document.getElementById("I").innerHTML = I.toString();  
-    document.getElementById("red").innerHTML = decIndex(R,I);
-    document.getElementById("green").innerHTML = decIndex(G,I);
-    document.getElementById("blue").innerHTML = decIndex(B,I);
-  
     if(I>N){
       I-=N;
      };  
