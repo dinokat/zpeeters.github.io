@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<!--test shit hier-->
-<p id="I"></p>
 <script>
 
 //rgb waarden
@@ -34,11 +32,7 @@ function decIndex(A,i) {
 //bereken en zet de nieuwe achtergrondkleur
 function newBgColor(){
     var kleur= "rgb("+decIndex(R,I)+","+decIndex(G,I)+","+decIndex(B,I)+")";
-    document.body. style.backgroundColor =kleur; 
-
-//test/debug functies
-document.getElementById("I").innerHTML = I.toString();  
-
+    document.body. style.backgroundColor =kleur;  
     I+=k;
     if(I>N) I-=N;  
 }
