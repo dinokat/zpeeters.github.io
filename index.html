@@ -39,9 +39,9 @@ function newBgColor(){
 </script>
 
 
-<section class="image">
+<section>
 	
-	<IMG src="qr.png">  
+	<IMG class="center" src="qr.png">  
 	
 </section>
 <section class="links">
@@ -49,13 +49,12 @@ function newBgColor(){
 </section>
 
 <style type="text/css">
-	.image img {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+	IMG.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+     }
 
 section {
         position: absolute;
