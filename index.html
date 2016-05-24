@@ -22,27 +22,27 @@ var k= N/(T*fpms);
 //bepaal hoe "vloeiend" de overgang loopt
 var myVar = setInterval(function(){ newBgColor() }, 16);
 
-//bereken nieuwe "tussenwaarde" in een rij 
+//bereken nieuwe "tussenwaarde" in een rij
 function decIndex(A,i) {
     var j = Math.floor(i);
-    var R = A[j]+(A[(j+1)>A.length ? 0 : j+1]-A[j])*(i-j) ;   
+    var R = A[j]+(A[(j+1)>A.length ? 0 : j+1]-A[j])*(i-j) ;
     return(Math.round(R));
 }
 
 //bereken en zet de nieuwe achtergrondkleur
 function newBgColor(){
     var kleur= "rgb("+decIndex(R,I)+","+decIndex(G,I)+","+decIndex(B,I)+")";
-    document.body. style.backgroundColor =kleur;  
+    document.body. style.backgroundColor =kleur;
     I+=k;
-    if(I>N) I-=N;  
+    if(I>N) I-=N;
 }
 </script>
 
 
 <section>
-	
-	<IMG class="center" src="qr.png">  
-	
+
+	<IMG class="center" src="qr.png">
+
 </section>
 <section class="links">
 <p>Is dit alles?</p>
@@ -50,6 +50,8 @@ function newBgColor(){
 
 <style type="text/css">
 	IMG.center {
+        max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -66,7 +68,7 @@ section {
 section.links {
         position: absolute;;
         top: 50%;
-        
+
         margin-left: 25%;
         transform: translate(0%, -50%) }
 
