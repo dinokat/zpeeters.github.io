@@ -5,14 +5,9 @@ p {
 IMG.center {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50%;
+    margin-top: 50%;    
 }
-section {
-    max-width: 100%;
-    height: auto;
+section {    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,6 +18,6 @@ section.links {
     position: absolute;
     ;
     top: 50%;
-    margin-left: 25%;
-    transform: translate(0%, -50%)
+    margin-left: 19%;
+    transform: translate(0%, -25%)
 }
