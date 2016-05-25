@@ -1,9 +1,28 @@
-
 p {
-   font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier; 
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
     padding: 5px;
 }
-
-p {
-    
+IMG.center {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+}
+section {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+section.links {
+    position: absolute;
+    ;
+    top: 50%;
+    margin-left: 25%;
+    transform: translate(0%, -50%)
 }
