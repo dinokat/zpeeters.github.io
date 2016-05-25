@@ -42,13 +42,15 @@ function newBgColor(){
 </script>
 
 
-<section>
+<section class="qr">
 
 	<IMG class="center" src="qr.png">
 
 </section>
+
 <section class="links">
 <p>Is dit alles?</p>
+
 </section>
 
 <style type="text/css">
@@ -61,7 +63,7 @@ function newBgColor(){
     margin-top: 50%;
      }
 
-section {
+section.qr {
         max-width: 100%;
     height: auto;
         position: absolute;
@@ -71,11 +73,12 @@ section {
         transform: translate(-50%, -50%) }
 
 section.links {
-        position: absolute;;
-        top: 50%;
+        float: right;
+       
 
-        margin-left: 25%;
-        transform: translate(0%, -50%) }
+        margin-left: 5%;
+    margin-right: 5%;
+        transform: translateY(-50%) }
 
 </style>
 </body>
