@@ -4,36 +4,33 @@ body {
     margin: 0px;
     padding: 0px;
 }
-
-section{
-    
-}
-
-p{
-    
-}
-
-
+section {}
+p {}
 #top {
     float: left;
     width: 100%;
-    height: 33,33%;
+    height: 33, 33%;
 }
-
 #links {
     float: left;
-    width: 33,33%;
-    height: 33,33%;
+    width: 33, 33%;
+    height: 33, 33%;
 }
-
 #midden {
     float: left;
-    width: 33,33%;
-    height: 33,33%;
+    width: 33, 33%;
+    height: 33, 33%;
 }
-
 #rechts {
     float: left;
-    width: 33,33%;
-    height: 33,33%;
+    width: 33, 33%;
+    height: 33, 33%;
+}
+img {
+    float: inherit;
+    margin: auto;
+    max-width: 100%;
+}
+#niets {
+    width: 100%;
 }
