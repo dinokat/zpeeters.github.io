@@ -25,6 +25,7 @@ function decIndex(A, i) {
 function newBgColor() {
     var kleur = "rgb(" + decIndex(R, I) + "," + decIndex(G, I) + "," + decIndex(B, I) + ")";
     document.body.style.backgroundColor = kleur;
+   // $("body").css("background-color", kleur);
     I += k;
     if (I > N) I -= N;
 }
