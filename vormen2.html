@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Titel en icoon -->
     <title>Vormen</title>
-    <link rel="icon" type="image/png" href="zicon.png" /></head>
+    <link rel="icon" type="image/png" href="zicon.png" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="stijl2.css">
+</head>
 <body style="background-color:black; color:lime">
-
-<h1 >Groene Vormen</h1>
-<svg height="210" width="500">
-  <polygon id="vorm" points="200,10 250,190 160,210" style="fill:lime;stroke:lime;stroke-width:1" />
-  Sorry, deze browser ondersteund geen SVG.
-</svg><p>klik voor nieuwe vorm</p>
-
-<button onclick="nieuweVorm()">Try it</button>
 
 
 <script>
-
 
 function Point(x1,x2){
    this.X=x1;
@@ -51,7 +47,8 @@ function afstand(p1,p2){
   return Math.sqrt((p2.Y - p1.Y)*(p2.Y - p1.Y) + (p2.X - p1.X)*(p2.X- p1.X));
 }
 
-
+var lijst;
+var lijnen;
 
 var distributie= [3,3,3,3,4,4,4,4,5,5,5,6,6,7,8];
 var punten = "";
@@ -60,21 +57,55 @@ function bepaalPunten(){
   //var aantal=randomIntFromInterval(3,9);
   var aantal=distributie[randomIntFromInterval(0,14)];
   for(i=0;i<aantal;i++){
+    //lijst[i]= new Point( randomIntFromInterval(0,500), randomIntFromInterval(0,210)) ;
     punten += randomIntFromInterval(0,500)+","+randomIntFromInterval(0,210) + " ";
   }
 }
 
+setInterval(nieuweVorm, 3000);
+var aan=false;
 
 function nieuweVorm() {
+if(aan){
+document.getElementById("vorm").setAttribute("points", "0,0");
+aan=false;
+return;
+}
+aan=true;
 bepaalPunten();
 document.getElementById("vorm").setAttribute("points", punten);    
 }
+
+
+
 function randomIntFromInterval(min,max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
 </script>
+
+
+
+<body onmouseover="transp()">
+
+    <div class="flex-container">
+        <div class="flex-item"></div>
+        <div class="flex-container1">
+            <div class="flex-item1">
+               <svg height="210" width="500">
+  <polygon id="vorm" points="0,0" style="fill:lime;stroke:lime;stroke-width:1" />
+  Sorry, deze browser ondersteund geen SVG.
+</svg>
+            </div>
+            <div class="flex-item2">
+                <p class="ida">Is dit alles?</p>
+            </div>
+        </div>
+    </div>
+
+
+
 
 </body>
 </html>
