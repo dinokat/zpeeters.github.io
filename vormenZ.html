@@ -61,21 +61,19 @@ function bepaalPunten(){
     punten += randomIntFromInterval(0,800)+","+randomIntFromInterval(0,640) + " ";
   }
 }
-var timer = setInterval(nieuweVorm, 3000);
+setInterval(nieuweVorm, 3000);
 
 var aan=false;
 
 function nieuweVorm() {
 if(aan){
 document.getElementById("vorm").setAttribute("points", "0,0");
-    clearInterval(timer);
-   timer= setInterval(nieuweVorm, 3000);
+    setInterval(nieuweVorm, 3000);
 aan=false;
 return;
 }
 aan=true;
-    clearInterval(timer);
-timer= setInterval(nieuweVorm, 1000);    
+setInterval(nieuweVorm, 1000);    
 bepaalPunten();
 document.getElementById("vorm").setAttribute("points", punten);    
     return;
