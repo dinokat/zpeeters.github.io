@@ -61,8 +61,10 @@ function bepaalPunten(){
     punten += randomIntFromInterval(0,800)+","+randomIntFromInterval(0,640) + " ";
   }
 }
-var timer = setInterval(nieuweVorm, 15000);
 
+bepaalPunten();
+document.getElementById("vorm").setAttribute("points", punten);    
+var timer = setInterval(nieuweVorm, 15000);
 var aan=true;
 
 function nieuweVorm() {
