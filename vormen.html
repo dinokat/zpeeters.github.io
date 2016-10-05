@@ -29,64 +29,55 @@ function Line(p1,p2){
    };
 
    this.findY=function(x){ return(this.A *x +this.B);};
-
    this.snijpunt =function(l){ 
-    var s = (l.B - this.B)/(l.A - this.A);
-    return Point(s,this.findY(x));
-    };
+   var s = (l.B - this.B)/(l.A - this.A);
+   return Point(s,this.findY(x));
+   };
 
    this.snijden=function(l){
       return (this.inBox(this.snijpunt(l)) && l.inBox(this.snijpunt(l)));
    };
-   //this.A = function() {return ((this.P2.Y - this.P1.Y)/(this.P2.X - this.P1.X)) ;};
-   //this.B = function() {return (this.A * (this.P1.Y - this.P1.X) );};
 }
-
 
 function afstand(p1,p2){
   return Math.sqrt((p2.Y - p1.Y)*(p2.Y - p1.Y) + (p2.X - p1.X)*(p2.X- p1.X));
 }
 
+
+    
 var lijst;
 var lijnen;
-
 var distributie= [3,3,3,3,4,4,4,4,5,5,5,6,6,7,8];
 var punten = "";
+    
 function bepaalPunten(){
-  punten="";
-  //var aantal=randomIntFromInterval(3,9);
-  var aantal=distributie[randomIntFromInterval(0,14)];
-  for(i=0;i<aantal;i++){
-    //lijst[i]= new Point( randomIntFromInterval(0,500), randomIntFromInterval(0,210)) ;
-    punten += randomIntFromInterval(0,800)+","+randomIntFromInterval(0,640) + " ";
-  }
+    punten="";
+    var aantal=distributie[randomIntFromInterval(0,14)];
+    for(i=0;i<aantal;i++){
+        punten += randomIntFromInterval(0,800)+","+randomIntFromInterval(0,640) + " ";
+    }
 }
 
-//bepaalPunten();
-//document.getElementById("vorm").setAttribute("points", punten);    
 var timer = setInterval(nieuweVorm, 10);
 var aan=false;
 
-function nieuweVorm() {
-if(aan){
-document.getElementById("vorm").setAttribute("points", "0,0");
+function nieuweVorm(){
+    if(aan){
+        document.getElementById("vorm").setAttribute("points", "0,0");
+        clearInterval(timer);
+        timer= setInterval(nieuweVorm, 3000);
+        aan=false;
+        return;
+    }
+    aan=true;
     clearInterval(timer);
-   timer= setInterval(nieuweVorm, 3000);
-aan=false;
-return;
-}
-aan=true;
-    clearInterval(timer);
-timer= setInterval(nieuweVorm, 15000);    
-bepaalPunten();
-document.getElementById("vorm").setAttribute("points", punten);    
+    timer= setInterval(nieuweVorm, 15000);    
+    bepaalPunten();
+    document.getElementById("vorm").setAttribute("points", punten);    
     return;
 }
 
-
-
-function randomIntFromInterval(min,max)
-{
+function randomIntFromInterval(min,max){
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
