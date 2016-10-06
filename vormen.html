@@ -12,39 +12,7 @@
 
 
 <script>
-
-function Point(x1,x2){
-   this.X=x1;
-   this.Y=y1;
-}
-
-function Line(p1,p2){
-   this.P1=(p1.X < p2.X) ? p1 : p2 ;
-   this.P2=(p1.X < p2.X) ? p2 : p1 ;
-   this.A = (p2.Y - p1.Y)/(p2.X - p1.X) ;
-   this.B =  ((p2.Y - p1.Y)/(p2.X - p1.X)) * (p1.Y - p1.X) ;
-
-   this.inBox=function(p){
-                 return ((this.P1.X < p.X < P2.X) && ((this.P1.Y < p.Y < P2.X)||(this.P2.Y < p.Y < P1.X)));
-   };
-
-   this.findY=function(x){ return(this.A *x +this.B);};
-   this.snijpunt =function(l){ 
-   var s = (l.B - this.B)/(l.A - this.A);
-   return Point(s,this.findY(x));
-   };
-
-   this.snijden=function(l){
-      return (this.inBox(this.snijpunt(l)) && l.inBox(this.snijpunt(l)));
-   };
-}
-
-function afstand(p1,p2){
-  return Math.sqrt((p2.Y - p1.Y)*(p2.Y - p1.Y) + (p2.X - p1.X)*(p2.X- p1.X));
-}
-
-
-    
+ 
 var lijst;
 var lijnen;
 var distributie= [3,3,3,3,4,4,4,4,5,5,5,6,6,7,8];
@@ -85,19 +53,67 @@ function randomIntFromInterval(min,max){
 
 
 
-
-
     <div class="flex-container">
-       
-   <svg height="640" width="800" style="margin:  auto;">
-  <polygon id="vorm" points="0,0" style="fill:lime;stroke:lime;stroke-width:1" />
-  Sorry, deze browser ondersteund geen SVG.
-</svg>
+        <svg height="640" width="800" style="margin:  auto;">
+        <polygon id="vorm" points="0,0" style="fill:lime;stroke:lime;stroke-width:1" />
+        Sorry, deze browser ondersteund geen SVG.
+        </svg>
        
     </div>
 
-
-
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+
+function Point(x1,x2){
+   this.X=x1;
+   this.Y=y1;
+}
+
+function Line(p1,p2){
+   this.P1=(p1.X < p2.X) ? p1 : p2 ;
+   this.P2=(p1.X < p2.X) ? p2 : p1 ;
+   this.A = (p2.Y - p1.Y)/(p2.X - p1.X) ;
+   this.B =  ((p2.Y - p1.Y)/(p2.X - p1.X)) * (p1.Y - p1.X) ;
+
+   this.inBox=function(p){
+                 return ((this.P1.X < p.X < P2.X) && ((this.P1.Y < p.Y < P2.X)||(this.P2.Y < p.Y < P1.X)));
+   };
+
+   this.findY=function(x){ return(this.A *x +this.B);};
+   this.snijpunt =function(l){ 
+   var s = (l.B - this.B)/(l.A - this.A);
+   return Point(s,this.findY(x));
+   };
+
+   this.snijden=function(l){
+      return (this.inBox(this.snijpunt(l)) && l.inBox(this.snijpunt(l)));
+   };
+}
+
+function afstand(p1,p2){
+  return Math.sqrt((p2.Y - p1.Y)*(p2.Y - p1.Y) + (p2.X - p1.X)*(p2.X- p1.X));
+}
+
+</script>
+
+
+
+
+
